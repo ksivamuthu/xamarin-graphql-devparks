@@ -24,7 +24,6 @@ The idea for the demo of this talk is - we are going to build the fictional them
 
 ## GraphQL
 
-The backend .NET core server is integrated with GraphQL.NET library.  You can run and hit the GraphQL playground (https://localhost:5001/playground) and play with graphql. The backend storage is cosmosdb. You need to add the data in cosmosdb.
+The backend .NET core server is integrated with GraphQL.NET library.  You can run and hit the GraphQL playground (https://localhost:5001/playground) and play with graphql. The backend storage is cosmosdb. 
 
-> Stay tuned for more updates on adding features to this demo
-More
+## Stay tuned for more updates on adding features to this demo
