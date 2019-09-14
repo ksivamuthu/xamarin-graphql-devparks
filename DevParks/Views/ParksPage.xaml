@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DevParks.Views.ParksPage"
+             Title="{Binding Title}"
+             x:Name="Parks">
+
+    <ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <ListView x:Name="ItemsListView"
+                  ItemsSource="{Binding Parks}"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="true"
+                  CachingStrategy="RecycleElement"
+                  BackgroundColor="Transparent"
+                  SeparatorVisibility="None"
+                  ItemSelected="OnItemSelected">
+            <ListView.Header>
+                <StackLayout Padding="20">
+                      <Label Text="Dev World Parks"
+                                       d:Text="Dev World Parks"
+                                       LineBreakMode="NoWrap"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="28" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame IsClippedToBounds="True"
+                               HasShadow="True"
+                               Padding="0">
+                            <Frame.OutlineColor>
+                                <OnPlatform x:TypeArguments="Color"
+                                            Android="Gray"
+                                            iOS="Gray" />
+                            </Frame.OutlineColor>
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness"
+                                            Android="10"
+                                            iOS="10" />
+                            </Frame.Margin>
+                            <StackLayout Padding="20" Orientation="Horizontal">
+                                <Image Source="{Binding Logo}"
+                                       WidthRequest="50"
+                                       HeightRequest="50" />
+                                <Label Text="{Binding Name}"
+                                       d:Text="{Binding .}"
+                                       LineBreakMode="NoWrap"
+                                       VerticalOptions="Center"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="24" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <Label />
+            </ListView.Footer>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
