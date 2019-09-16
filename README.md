@@ -49,7 +49,7 @@ You've to create the CosmosDB - with Parks & Rides Collection. The sample data i
 
 # Future Plans
 
-[] Update the cosmosdb import utility or change into postgresql docker
-[] Implement Authentication/Authorization
-[] Dataloader
-[] More clean data
+[ ] Update the cosmosdb import utility or change into postgresql docker
+[ ] Implement Authentication/Authorization
+[ ] Dataloader
+[ ] More clean data
