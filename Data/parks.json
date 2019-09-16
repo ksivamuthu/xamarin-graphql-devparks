@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "name": "Javascript World",
+    "logo": "https://devparksimages.blob.core.windows.net/images/jslogo.png",
+    "location": "Everywhere",
+    "openinghrs": "09:00",
+    "closinghrs": "23:00",
+    "_rid": "fe0VAO4MxdUBAAAAAAAAAA==",
+    "_self": "dbs/fe0VAA==/colls/fe0VAO4MxdU=/docs/fe0VAO4MxdUBAAAAAAAAAA==/",
+    "_etag": "\"37005eae-0000-0100-0000-5d7cf9480000\"",
+    "_attachments": "attachments/",
+    "_ts": 1568471368
+  },
+  {
+    "id": "2",
+    "name": "Cloud Empire",
+    "logo": "https://devparksimages.blob.core.windows.net/images/cloud.png",
+    "location": "Cloud",
+    "openinghrs": "09:00",
+    "closinghrs": "23:00",
+    "_rid": "fe0VAO4MxdUCAAAAAAAAAA==",
+    "_self": "dbs/fe0VAA==/colls/fe0VAO4MxdU=/docs/fe0VAO4MxdUCAAAAAAAAAA==/",
+    "_etag": "\"3700baae-0000-0100-0000-5d7cf9520000\"",
+    "_attachments": "attachments/",
+    "_ts": 1568471378
+  },
+  {
+    "id": "3",
+    "name": "Magical Mobile",
+    "logo": "https://devparksimages.blob.core.windows.net/images/mobile.png",
+    "location": "Mobile",
+    "openinghrs": "09:00",
+    "closinghrs": "23:00",
+    "_rid": "fe0VAO4MxdUDAAAAAAAAAA==",
+    "_self": "dbs/fe0VAA==/colls/fe0VAO4MxdU=/docs/fe0VAO4MxdUDAAAAAAAAAA==/",
+    "_etag": "\"370066b1-0000-0100-0000-5d7cf9980000\"",
+    "_attachments": "attachments/",
+    "_ts": 1568471448
+  },
+  {
+    "id": "4",
+    "name": "Screaming Machine Learning",
+    "logo": "https://devparksimages.blob.core.windows.net/images/ml.png",
+    "location": "Machine Learning",
+    "openinghrs": "09:00",
+    "closinghrs": "23:00",
+    "_rid": "fe0VAO4MxdUEAAAAAAAAAA==",
+    "_self": "dbs/fe0VAA==/colls/fe0VAO4MxdU=/docs/fe0VAO4MxdUEAAAAAAAAAA==/",
+    "_etag": "\"37002ab8-0000-0100-0000-5d7cfa4b0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1568471627
+  }
+]
