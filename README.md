@@ -47,4 +47,9 @@ You've to create the CosmosDB - with Parks & Rides Collection. The sample data i
 * Wait time updater pick random rides and update Wait time
 * If you are running the client application, the subscription works and see the client is updated with wait times.
 
-#
+# Future Plans
+
+[] Update the cosmosdb import utility or change into postgresql docker
+[] Implement Authentication/Authorization
+[] Dataloader
+[] More clean data
