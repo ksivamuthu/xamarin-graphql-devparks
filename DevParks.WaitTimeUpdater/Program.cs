@@ -29,7 +29,7 @@ namespace DevParks.WaitTimeUpdater
 
                 UpdateWaitTime(ride, RandomNumber(1, 100).ToString() + "m").Wait();
 
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
             }
         }
 
