@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DevParks.Models;
 using DevParks.Services;
+using GraphQL;
 using Xamarin.Forms;
 
 namespace DevParks.ViewModels
@@ -15,7 +16,7 @@ namespace DevParks.ViewModels
         private ParkService _parkService;
         private Park _park;
 
-        private GraphQL.Client.IGraphQLSubscriptionResult _result;
+        //private GraphQL.Client.IGraphQLSubscriptionResult _result;
 
         public RidesViewModel(Park park)
         {
@@ -26,8 +27,8 @@ namespace DevParks.ViewModels
 
         public async Task LoadData()
         {
-            _result = await _parkService.Subscribe();
-            _result.OnReceive += Result_OnReceive;
+            //_result = await _parkService.Subscribe();
+            //_result.OnReceive += Result_OnReceive;
 
             Rides.Clear();
             var parkDetails = await _parkService.GetPark(_park.Id);
@@ -36,25 +37,25 @@ namespace DevParks.ViewModels
                         { Id = ride.Id, Name = ride.Name, WaitTime = ride.WaitTime, Logo = ride.Logo });
         }
 
-        private void Result_OnReceive(GraphQL.Common.Response.GraphQLResponse obj)
-        {
-            var data = obj.GetDataFieldAs<Ride>("waitingTimeUpdated");  
-            Console.WriteLine(data);
+        //private void Result_OnReceive(GraphQLResponse obj)
+        //{
+        //    var data = obj.GetDataFieldAs<Ride>("waitingTimeUpdated");  
+        //    Console.WriteLine(data);
 
-            var ride = Rides.FirstOrDefault(x => x.Id == data.Id);
-            if(ride != null)
-            {
-                ride.WaitTime = data.WaitTime;
-            }
-        }
+        //    var ride = Rides.FirstOrDefault(x => x.Id == data.Id);
+        //    if(ride != null)
+        //    {
+        //        ride.WaitTime = data.WaitTime;
+        //    }
+        //}
 
 
         public void Unregister()
         {
-            if (_result != null)
-            {
-                _result.OnReceive -= Result_OnReceive;
-            }
+            //if (_result != null)
+            //{
+            //    _result.OnReceive -= Result_OnReceive;
+            //}
         }
     }
 }

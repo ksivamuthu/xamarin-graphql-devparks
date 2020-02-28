@@ -15,12 +15,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "4m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/angular.png",
-        "_rid": "fe0VAJpQLgkBAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkBAAAAAAAAAA==/",
-        "_etag": "\"14009c72-0000-0100-0000-5d7d3fdb0000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489435
+        "logo": "angular.png"
     },
     {
         "id": "ride-2",
@@ -38,12 +33,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "5m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/react.png",
-        "_rid": "fe0VAJpQLgkCAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkCAAAAAAAAAA==/",
-        "_etag": "\"14009972-0000-0100-0000-5d7d3fd80000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489432
+        "logo": "react.png"
     },
     {
         "id": "ride-3",
@@ -61,12 +51,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "68m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/vue.png",
-        "_rid": "fe0VAJpQLgkDAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkDAAAAAAAAAA==/",
-        "_etag": "\"14007872-0000-0100-0000-5d7d3fbb0000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489403
+        "logo": "vue.png"
     },
     {
         "id": "ride-4",
@@ -84,12 +69,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "32m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/nodejs.png",
-        "_rid": "fe0VAJpQLgkEAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkEAAAAAAAAAA==/",
-        "_etag": "\"14007972-0000-0100-0000-5d7d3fbc0000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489404
+        "logo": "nodejs.png"
     },
     {
         "id": "ride-5",
@@ -107,12 +87,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "43m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/ts.png",
-        "_rid": "fe0VAJpQLgkFAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkFAAAAAAAAAA==/",
-        "_etag": "\"14005c72-0000-0100-0000-5d7d3fa20000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489378
+        "logo": "ts.png"
     },
     {
         "id": "mobile-ride-1",
@@ -130,12 +105,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "67m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/xam.png",
-        "_rid": "fe0VAJpQLgkHAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkHAAAAAAAAAA==/",
-        "_etag": "\"14006072-0000-0100-0000-5d7d3fa60000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489382
+        "logo": "xam.png"
     },
     {
         "id": "mobile-ride-2",
@@ -153,12 +123,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "83m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/reactnative.png",
-        "_rid": "fe0VAJpQLgkIAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkIAAAAAAAAAA==/",
-        "_etag": "\"14009f72-0000-0100-0000-5d7d3fde0000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489438
+        "logo": "reactnative.png"
     },
     {
         "id": "mobile-ride-3",
@@ -176,12 +141,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "31m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/flutter.png",
-        "_rid": "fe0VAJpQLgkJAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkJAAAAAAAAAA==/",
-        "_etag": "\"14009472-0000-0100-0000-5d7d3fd30000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489427
+        "logo": "flutter.png"
     },
     {
         "id": "mobile-ride-4",
@@ -199,12 +159,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "78m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/nativescript.png",
-        "_rid": "fe0VAJpQLgkKAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkKAAAAAAAAAA==/",
-        "_etag": "\"14009d72-0000-0100-0000-5d7d3fdc0000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489436
+        "logo": "nativescript.png"
     },
     {
         "id": "mobile-ride-5",
@@ -222,12 +177,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "37m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/ionic.png",
-        "_rid": "fe0VAJpQLgkLAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkLAAAAAAAAAA==/",
-        "_etag": "\"14009572-0000-0100-0000-5d7d3fd50000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489429
+        "logo": "ionic.png"
     },
     {
         "id": "cloud-ride-1",
@@ -245,12 +195,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "91m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/azure.png",
-        "_rid": "fe0VAJpQLgkNAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkNAAAAAAAAAA==/",
-        "_etag": "\"14009772-0000-0100-0000-5d7d3fd70000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489431
+        "logo": "azure.png"
     },
     {
         "id": "cloud-ride-2",
@@ -268,12 +213,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "83m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/aws.png",
-        "_rid": "fe0VAJpQLgkOAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkOAAAAAAAAAA==/",
-        "_etag": "\"14009b72-0000-0100-0000-5d7d3fda0000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489434
+        "logo": "aws.png"
     },
     {
         "id": "cloud-ride-3",
@@ -291,12 +231,7 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "99m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/gcp.png",
-        "_rid": "fe0VAJpQLgkPAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkPAAAAAAAAAA==/",
-        "_etag": "\"1400a272-0000-0100-0000-5d7d3fe00000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489440
+        "logo": "gcp.png"
     },
     {
         "id": "ml-ride-1",
@@ -314,17 +249,12 @@
         "riderswap": false,
         "fastpassonly": false,
         "waitTime": "25m",
-        "logo": "https://devparksimages.blob.core.windows.net/images/tensorflow.png",
-        "_rid": "fe0VAJpQLgkQAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkQAAAAAAAAAA==/",
-        "_etag": "\"1400a172-0000-0100-0000-5d7d3fdf0000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568489439
+        "logo": "tensorflow.png"
     },
     {
         "id": "ml-ride-2",
         "name": "Magnificient ML.NET",
-        "logo": "https://devparksimages.blob.core.windows.net/images/mlnet.png",
+        "logo": "mlnet.png",
         "parkId": "4",
         "fastpassbooth": null,
         "shortname": null,
@@ -337,11 +267,6 @@
         "heightrestrictions": null,
         "riderswap": false,
         "fastpassonly": false,
-        "waitTime": "7m",
-        "_rid": "fe0VAJpQLgkSAAAAAAAAAA==",
-        "_self": "dbs/fe0VAA==/colls/fe0VAJpQLgk=/docs/fe0VAJpQLgkSAAAAAAAAAA==/",
-        "_etag": "\"12002ecc-0000-0100-0000-5d7d07660000\"",
-        "_attachments": "attachments/",
-        "_ts": 1568474982
+        "waitTime": "7m"
     }
 ]

@@ -36,4 +36,9 @@ namespace DevParks.Models
         [JsonProperty("logo")]
         public string Logo { get; set; }
     }
+
+    public class WaitingTimeSubscriptionResult
+    {
+
+    }
 }

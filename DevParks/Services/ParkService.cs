@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
 using System.Threading.Tasks;
 using DevParks.Models;
+using GraphQL;
 using GraphQL.Client.Http;
-using GraphQL.Common.Request;
+using Newtonsoft.Json;
 
 namespace DevParks.Services
 {
@@ -13,7 +16,11 @@ namespace DevParks.Services
 
         public ParkService()
         {
-            _graphQLClient = new GraphQLHttpClient("https://devparks.azurewebsites.net/graphql");
+            _graphQLClient = new GraphQLHttpClient(o =>
+            {
+                o.EndPoint = new Uri("http://0a1c6d2c.ngrok.io/v1/graphql");                
+                o.JsonSerializer = new GraphQL.Client.Serializer.Newtonsoft.NewtonsoftJsonSerializer();
+            });           
         }
 
         public async Task<List<Park>> GetAllParks()
@@ -30,8 +37,8 @@ namespace DevParks.Services
 	                    }"
             };
 
-            var response = await _graphQLClient.SendQueryAsync(allParksRequest);
-            return response.GetDataFieldAs<List<Park>>("parks");
+            var response = await _graphQLClient.SendQueryAsync<ParksResponse>(allParksRequest);
+            return response.Data.Parks;
         }
 
         public async Task<ParkRides> GetPark(string parkId)
@@ -42,6 +49,7 @@ namespace DevParks.Services
 	                    query parks($id: ID) {
                           park(id: $id) {
                             id
+
                             name
                             rides {
                               id
@@ -58,27 +66,26 @@ namespace DevParks.Services
                 }
             };
 
-            var response = await _graphQLClient.SendQueryAsync(getParkRequet);
-            return response.GetDataFieldAs<ParkRides>("park");
+            var response = await _graphQLClient.SendQueryAsync<ParkRides>(getParkRequet);
+            return response.Data;
         }
 
-        [Obsolete]
-        public Task<GraphQL.Client.IGraphQLSubscriptionResult> Subscribe()
-        {
-            var req = new GraphQLRequest
-            {
-                Query = @"
-	                    subscription {
-                          waitingTimeUpdated {
-                            id
-                            name
-                            waitTime
-                          }
-                        }"
-            };
+        //public Task<dynamic> Subscribe()
+        //{
+        //    var req = new GraphQLRequest
+        //    {
+        //        Query = @"
+	       //             subscription {
+        //                  waitingTimeUpdated {
+        //                    id
+        //                    name
+        //                    waitTime
+        //                  }
+        //                }"
+        //    };
 
             
-            return _graphQLClient.SendSubscribeAsync(req);
-        }
+        //    return _graphQLClient.CreateSubscriptionStream<dynamic>(req);
+        //}
     }
 }

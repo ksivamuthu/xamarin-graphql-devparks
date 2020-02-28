@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
 using DevParks.Models;
-using DevParks.Views;
-using GraphQL.Common.Request;
 using DevParks.Services;
 
 namespace DevParks.ViewModels
