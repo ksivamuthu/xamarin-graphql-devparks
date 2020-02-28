@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DevParks.Models;
 using DevParks.Services;
 using GraphQL;
+using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 
 namespace DevParks.ViewModels
@@ -15,8 +16,8 @@ namespace DevParks.ViewModels
 
         private ParkService _parkService;
         private Park _park;
+        private IDisposable _result;
 
-        //private GraphQL.Client.IGraphQLSubscriptionResult _result;
 
         public RidesViewModel(Park park)
         {
@@ -27,8 +28,7 @@ namespace DevParks.ViewModels
 
         public async Task LoadData()
         {
-            //_result = await _parkService.Subscribe();
-            //_result.OnReceive += Result_OnReceive;
+            _result = _parkService.WaitingTimeUpdatedStream(_park.Id).Subscribe(Result_OnReceive);
 
             Rides.Clear();
             var parkDetails = await _parkService.GetPark(_park.Id);
@@ -37,25 +37,28 @@ namespace DevParks.ViewModels
                         { Id = ride.Id, Name = ride.Name, WaitTime = ride.WaitTime, Logo = ride.Logo });
         }
 
-        //private void Result_OnReceive(GraphQLResponse obj)
-        //{
-        //    var data = obj.GetDataFieldAs<Ride>("waitingTimeUpdated");  
-        //    Console.WriteLine(data);
+        private void Result_OnReceive(GraphQLResponse<JObject> obj)
+        {
+            var data = obj.Data["rides"];
+            Console.WriteLine(data);
 
-        //    var ride = Rides.FirstOrDefault(x => x.Id == data.Id);
-        //    if(ride != null)
-        //    {
-        //        ride.WaitTime = data.WaitTime;
-        //    }
-        //}
+            foreach (var item in data)
+            {
+                var ride = Rides.FirstOrDefault(x => x.Id == item["id"].ToString());
+                if (ride != null)
+                {
+                    ride.WaitTime = item["waitTime"].ToString();
+                }
+            }            
+        }
 
 
         public void Unregister()
         {
-            //if (_result != null)
-            //{
-            //    _result.OnReceive -= Result_OnReceive;
-            //}
+            if (_result != null)
+            {
+                _result.Dispose();
+            }
         }
     }
 }

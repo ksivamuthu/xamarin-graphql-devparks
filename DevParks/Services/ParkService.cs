@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using DevParks.Models;
 using GraphQL;
 using GraphQL.Client.Http;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace DevParks.Services
 {
@@ -46,12 +48,12 @@ namespace DevParks.Services
             var getParkRequet = new GraphQLRequest
             {
                 Query = @"
-	                    query parks($id: ID) {
-                          park(id: $id) {
+	                    query parks($id: Int) {
+                          parks(where: { id: { _eq:  $id } } ) {
                             id
 
                             name
-                            rides {
+                            parks_rides {
                               id
                               name
                               logo
@@ -66,26 +68,28 @@ namespace DevParks.Services
                 }
             };
 
-            var response = await _graphQLClient.SendQueryAsync<ParkRides>(getParkRequet);
-            return response.Data;
+            var response = await _graphQLClient.SendQueryAsync<ParksRidesResponse>(getParkRequet);
+            return response.Data.Parks.FirstOrDefault();
         }
 
-        //public Task<dynamic> Subscribe()
-        //{
-        //    var req = new GraphQLRequest
-        //    {
-        //        Query = @"
-	       //             subscription {
-        //                  waitingTimeUpdated {
-        //                    id
-        //                    name
-        //                    waitTime
-        //                  }
-        //                }"
-        //    };
+        public IObservable<GraphQLResponse<JObject>> WaitingTimeUpdatedStream(string parkId)
+        {
+            var req = new GraphQLRequest
+            {
+                Query = @"
+	                    subscription getWaitTime($id: Int) {
+                            rides(where:{parkId:{_eq:$id}}) {
+                                id
+                                waitTime
+                            }
+                        }",
+                Variables = new
+                {
+                    id = parkId
+                }
+            };
 
-            
-        //    return _graphQLClient.CreateSubscriptionStream<dynamic>(req);
-        //}
+            return _graphQLClient.CreateSubscriptionStream<JObject>(req);
+        }
     }
 }

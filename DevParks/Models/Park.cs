@@ -18,7 +18,7 @@ namespace DevParks.Models
 
     public class ParkRides : Park
     {
-        [JsonProperty("rides")]
+        [JsonProperty("parks_rides")]
         public List<Ride> Rides { get; set; } = new List<Ride>();
     }
 

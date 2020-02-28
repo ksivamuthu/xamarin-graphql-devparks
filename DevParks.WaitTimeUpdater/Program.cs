@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using GraphQL;
 using GraphQL.Client.Http;
-using GraphQL.Common.Request;
 using Newtonsoft.Json.Linq;
 
 namespace DevParks.WaitTimeUpdater
 {
     class Program
     {
-        private static readonly GraphQLHttpClient _graphQLClient = new GraphQLHttpClient("https://devparks.azurewebsites.net/graphql");
+        private static GraphQLHttpClient _graphQLClient = new GraphQLHttpClient(o =>
+            {
+            o.EndPoint = new Uri("http://0a1c6d2c.ngrok.io/v1/graphql");
+            o.JsonSerializer = new GraphQL.Client.Serializer.Newtonsoft.NewtonsoftJsonSerializer();
+        });  
     
 
         static void Main(string[] args)
@@ -29,7 +33,7 @@ namespace DevParks.WaitTimeUpdater
 
                 UpdateWaitTime(ride, RandomNumber(1, 100).ToString() + "m").Wait();
 
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
         }
 
@@ -39,7 +43,7 @@ namespace DevParks.WaitTimeUpdater
             return random.Next(min, max);
         }
 
-        public static async Task<List<JObject>> GetAllParks()
+        public static async Task<JArray> GetAllParks()
         {
             var allParksRequest = new GraphQLRequest
             {
@@ -51,28 +55,38 @@ namespace DevParks.WaitTimeUpdater
 	                    }"
             };
 
-            var response = await _graphQLClient.SendQueryAsync(allParksRequest);
-            return response.GetDataFieldAs<List<JObject>>("rides");
+            var response = await _graphQLClient.SendQueryAsync<JObject>(allParksRequest);
+            return response.Data["rides"] as JArray;
         }
 
         public static async Task UpdateWaitTime(string rideId, string waitTime)
         {
-            var updateRequest = new GraphQLRequest
+            try
             {
-                Query = @"mutation updateWaitTime($rideId: ID, $waitTime: String) {
-                            updateWaitTime(rideId: $rideId, waitTime:$waitTime) {
-                                id
-                                waitTime
+                var updateRequest = new GraphQLRequest
+                {
+                    Query = @"mutation updateWaitTime($rideId: String, $waitTime: String) {
+                            update_rides(where: {id:{_eq: $rideId}}, _set: {waitTime:$waitTime}) {
+                                returning {
+                                    name
+                                    waitTime
+                                }
                             }
                         }",
-                Variables = new
-                {
-                    rideId = rideId,
-                    waitTime = waitTime
-                }
-            };
 
-            var response = await _graphQLClient.SendMutationAsync(updateRequest);
+                    Variables = new
+                    {
+                        rideId = rideId,
+                        waitTime = waitTime
+                    }
+                };
+
+
+                await _graphQLClient.SendMutationAsync<dynamic>(updateRequest);
+            }catch(Exception ex)
+            {
+                Thread.Sleep(2000);
+            }
         }
     }
 }

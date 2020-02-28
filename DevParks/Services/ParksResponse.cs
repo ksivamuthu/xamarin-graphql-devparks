@@ -10,4 +10,10 @@ namespace DevParks.Services
         [JsonProperty("parks")]
         public List<Park> Parks { get; set; }
     }
+
+    public class ParksRidesResponse
+    {     
+        [JsonProperty("parks")]
+        public List<ParkRides> Parks { get; set; }
+    }
 }

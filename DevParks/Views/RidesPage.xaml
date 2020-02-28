@@ -22,9 +22,9 @@
             <DataTemplate>
                 <ViewCell> 
                     <StackLayout  Padding="20" Orientation="Horizontal">
-                        <Image Source="{Binding Logo}"
+                        <Image Source="{Binding Logo, StringFormat='https://raw.githubusercontent.com/ksivamuthu/xamarin-graphql-devparks/master/Data/logos/{0}'}"
                                 WidthRequest="50"
-                                HeightRequest="50" />
+                               HeightRequest="50" />
                         <BoxView WidthRequest="10"></BoxView>
                         <Label Text="{Binding Name}"
                                 d:Text="{Binding .}"
@@ -39,7 +39,7 @@
                                 VerticalOptions="Center"
                                 TextColor="Purple"
                                 Style="{DynamicResource ListItemTextStyle}"
-                                FontSize="20" />
+                                FontSize="25" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
